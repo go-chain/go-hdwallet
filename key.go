@@ -3,6 +3,7 @@ package hdwallet
 import (
 	"crypto/ecdsa"
 	"encoding/hex"
+	"fmt"
 
 	"github.com/btcsuite/btcd/btcec"
 	"github.com/btcsuite/btcd/txscript"
@@ -104,6 +105,7 @@ func (k *Key) GetChildKey(opts ...Option) (*Key, error) {
 		Extended: extended,
 	}
 
+	fmt.Println(no.GetPath())
 	err = key.init()
 	if err != nil {
 		return nil, err
