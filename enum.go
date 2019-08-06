@@ -30,6 +30,7 @@ const (
 
 	//my add
 	TRON = ZeroQuote + 195
+	EOS =  ZeroQuote + 194
 
 	// btc token
 	USDT = BTCToken + 1
