@@ -9,7 +9,11 @@ type ltc struct {
 }
 
 func newLTC(key *Key) Wallet {
-	key.opt.Params = &LTCParams
+
+	if key.opt.Params == nil {
+		key.opt.Params = &LTCParams
+	}
+
 	token := newBTC(key).(*btc)
 	token.name = "Litecoin"
 	token.symbol = "LTC"
