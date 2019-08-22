@@ -9,6 +9,10 @@ type bch struct {
 }
 
 func newBCH(key *Key) Wallet {
+
+	if key.opt.Params == nil {
+		key.opt.Params = &LTCParams
+	}
 	token := newBTC(key).(*btc)
 	token.name = "Bitcoin Cash"
 	token.symbol = "BCH"
