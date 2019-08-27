@@ -18,7 +18,7 @@ type trx struct {
 func newTRX(key *Key) Wallet {
 	return &trx{
 		name:   "tron",
-		symbol: "trx",
+		symbol: "xrp",
 		key:    key,
 	}
 }
