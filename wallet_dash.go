@@ -9,6 +9,9 @@ type dash struct {
 }
 
 func newDASH(key *Key) Wallet {
+	if key.opt.Params == nil {
+		key.opt.Params = &BCHParams
+	}
 	token := newBTC(key).(*btc)
 	token.name = "Dash"
 	token.symbol = "DASH"
