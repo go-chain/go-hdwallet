@@ -13,6 +13,7 @@ var (
 	BCHParams  = chaincfg.MainNetParams
 	QTUMParams = chaincfg.MainNetParams
 	USDTParams = chaincfg.MainNetParams
+	ZENParams = chaincfg.MainNetParams
 )
 
 func init() {
@@ -34,6 +35,13 @@ func init() {
 	DASHParams.PubKeyHashAddrID = 0x4c // 76
 	DASHParams.ScriptHashAddrID = 0x10 // 16
 	DASHParams.PrivateKeyID = 0xcc     // 204
+
+	//zen net params
+	// https://github.com/dashpay/dash/blob/master/src/chainparams.cpp
+	ZENParams.PubKeyHashAddrID =  1// 76
+	ZENParams.ScriptHashAddrID = 0x10 // 16
+	ZENParams.PrivateKeyID = 0xcc     // 204
+
 
 	// bch net params
 	// https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/src/chainparams.cpp

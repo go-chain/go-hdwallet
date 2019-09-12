@@ -32,6 +32,7 @@ const (
 	TRON = ZeroQuote + 195
 	EOS =  ZeroQuote + 194
 	XRP = ZeroQuote + 144
+	ZEN = ZeroQuote + 121
 
 	// btc token
 	USDT = BTCToken + 1
