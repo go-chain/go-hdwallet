@@ -1,10 +1,8 @@
 package hdwallet
 
 import (
-	"encoding/hex"
-	"fmt"
-	"github.com/btcsuite/btcutil"
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
+	"github.com/btcsuite/btcutil"
 )
 
 func init() {
@@ -49,7 +47,7 @@ func (c *zen) GetKey() *Key {
 }
 
 func (c *zen) GetAddress() (string,error) {
-	fmt.Println(hex.EncodeToString(c.key.Public.SerializeCompressed()))
-	fmt.Println(hex.EncodeToString(btcutil.Hash160(c.key.Public.SerializeCompressed())))
+	//fmt.Println(hex.EncodeToString(c.key.Public.SerializeCompressed()))
+	//fmt.Println(hex.EncodeToString(btcutil.Hash160(c.key.Public.SerializeCompressed())))
 	return addressEncoder.AddressEncode(btcutil.Hash160(c.key.Public.SerializeCompressed()), ZEN_mainnetAddressP2PKH),nil
 }
