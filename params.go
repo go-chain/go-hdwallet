@@ -45,9 +45,9 @@ func init() {
 	ZENParams.PrivateKeyID = 0xcc     // 204
 
 	//wicc net params
-	WICCParams.PubKeyHashAddrID =  0x87// 76
+	WICCParams.PubKeyHashAddrID =  0x49// 76
 	WICCParams.ScriptHashAddrID = 0x10 // 16
-	WICCParams.PrivateKeyID = 0xd2     // 204
+	WICCParams.PrivateKeyID = 0x99     // 204
 
 
 
