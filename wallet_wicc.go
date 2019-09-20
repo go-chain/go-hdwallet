@@ -11,8 +11,9 @@ type wicc struct {
 
 func newWicc(key *Key) Wallet {
 
-	key.opt.Params = &WICCParams
-
+	if key.opt.Params == nil {
+		key.opt.Params = &WICCParams
+	}
 	token := newBTC(key).(*btc)
 	token.name = "WaykiChain"
 	token.symbol = "WICC"
