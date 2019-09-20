@@ -33,6 +33,7 @@ const (
 	EOS =  ZeroQuote + 194
 	XRP = ZeroQuote + 144
 	ZEN = ZeroQuote + 121
+	WICC = ZeroQuote + 99999
 
 	// btc token
 	USDT = BTCToken + 1

@@ -14,6 +14,8 @@ var (
 	QTUMParams = chaincfg.MainNetParams
 	USDTParams = chaincfg.MainNetParams
 	ZENParams = chaincfg.MainNetParams
+	WICCParams = chaincfg.MainNetParams
+
 )
 
 func init() {
@@ -41,6 +43,12 @@ func init() {
 	ZENParams.PubKeyHashAddrID =  1// 76
 	ZENParams.ScriptHashAddrID = 0x10 // 16
 	ZENParams.PrivateKeyID = 0xcc     // 204
+
+	//wicc net params
+	WICCParams.PubKeyHashAddrID =  0x87// 76
+	WICCParams.ScriptHashAddrID = 0x10 // 16
+	WICCParams.PrivateKeyID = 0xd2     // 204
+
 
 
 	// bch net params
