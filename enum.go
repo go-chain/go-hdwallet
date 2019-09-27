@@ -34,6 +34,7 @@ const (
 	XRP = ZeroQuote + 144
 	ZEN = ZeroQuote + 121
 	WICC = ZeroQuote + 99999
+	NULS = ZeroQuote + 8964
 
 	// btc token
 	USDT = BTCToken + 1
