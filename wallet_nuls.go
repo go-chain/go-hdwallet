@@ -2,8 +2,9 @@ package hdwallet
 
 import (
 	"crypto/sha256"
-	"golang.org/x/crypto/ripemd160"
 	"errors"
+	"github.com/btcsuite/btcutil/base58"
+	"golang.org/x/crypto/ripemd160"
 )
 
 func init() {
@@ -83,7 +84,7 @@ func GetAddressByPub(pub []byte) (string, error) {
 		resultPart2[index] = v
 	}
 	resultPart2[23] = xor
-	resultBytes := EncodeBase58(resultPart2)
+	resultBytes := base58.Encode(resultPart2)
 	return prefix + string(constant[len(prefix)-1]) + string(resultBytes), nil
 }
 

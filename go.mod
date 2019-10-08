@@ -12,4 +12,5 @@ require (
 	github.com/go-chain/go-tron v0.0.0-20190805034144-d8a8e5fd9586
 	github.com/go-chain/go-xrp v0.0.0-20190826040159-24c51eeb15fe
 	github.com/tyler-smith/go-bip39 v1.0.0
+	golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
 )
