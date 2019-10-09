@@ -50,6 +50,7 @@ type NULSAddress struct {
 	Prefix string
 }
 
+const addType   = 1
 var (
 	constant = []rune{'a', 'b', 'c', 'd', 'e'}
 
@@ -80,7 +81,7 @@ func GetAddressByPub(pub []byte) (string, error) {
 	for index, v := range chainPart {
 		resultPart1[index] = v
 	}
-	resultPart1[2] = NULS_defalut.AddType
+	resultPart1[2] = addType
 	for index, v := range pubPart {
 		resultPart1[index+3] = v
 	}
