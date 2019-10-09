@@ -45,13 +45,19 @@ func (c *nuls) GetAddress() (string, error) {
 	return GetAddressByPub(c.key.Public.SerializeCompressed())
 }
 
-const (
-	addType = 1
-	prefix  = "NULS"
-)
+type NULSAddress struct {
+	AddType uint8
+	Prefix string
+}
 
 var (
 	constant = []rune{'a', 'b', 'c', 'd', 'e'}
+
+	NULS_defalut NULSAddress
+
+	NULS_mainnetAddress = NULSAddress{AddType:1,Prefix:"NULS"}
+	NULS_testnetAddress = NULSAddress{AddType:2,Prefix:"tNULS"}
+
 )
 
 //sha256之后hash160
@@ -69,12 +75,12 @@ func GetAddressByPub(pub []byte) (string, error) {
 	if len(pubPart) != 20 {
 		return "", errors.New("pubPart len not 20")
 	}
-	chainPart := ShortToBytes(1)
+	chainPart := ShortToBytes(int(NULS_defalut.AddType))
 	resultPart1 := make([]byte, 23)
 	for index, v := range chainPart {
 		resultPart1[index] = v
 	}
-	resultPart1[2] = addType
+	resultPart1[2] = NULS_defalut.AddType
 	for index, v := range pubPart {
 		resultPart1[index+3] = v
 	}
@@ -85,7 +91,7 @@ func GetAddressByPub(pub []byte) (string, error) {
 	}
 	resultPart2[23] = xor
 	resultBytes := base58.Encode(resultPart2)
-	return prefix + string(constant[len(prefix)-1]) + string(resultBytes), nil
+	return NULS_defalut.Prefix + string(constant[len(NULS_defalut.Prefix)-1]) + string(resultBytes), nil
 }
 
 //异或方法
