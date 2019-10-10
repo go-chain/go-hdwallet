@@ -35,12 +35,13 @@ const (
 	ZEN = ZeroQuote + 121
 	WICC = ZeroQuote + 99999
 	NULS = ZeroQuote + 8964
+	IOST = ZeroQuote + 291
 
 	// btc token
 	USDT = BTCToken + 1
 
 	// eth token
-	IOST = ETHToken + 1
+	//IOST = ETHToken + 1 //remove
 	USDC = ETHToken + 2
 )
 

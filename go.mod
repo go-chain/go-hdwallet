@@ -11,6 +11,7 @@ require (
 	github.com/ethereum/go-ethereum v1.9.2
 	github.com/go-chain/go-tron v0.0.0-20190805034144-d8a8e5fd9586
 	github.com/go-chain/go-xrp v0.0.0-20190826040159-24c51eeb15fe
+	github.com/iost-official/go-iost v3.3.0+incompatible // indirect
 	github.com/tyler-smith/go-bip39 v1.0.0
 	golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
 )

@@ -1,18 +1,41 @@
 package hdwallet
 
+import "github.com/iost-official/go-iost/account"
+
 func init() {
 	coins[IOST] = newIOST
 }
 
 type iost struct {
-	*eth
+	name   string
+	symbol string
+	key    *Key
 }
 
 func newIOST(key *Key) Wallet {
-	token := newETH(key).(*eth)
-	token.name = "Internet of Services"
-	token.symbol = "IOST"
-	token.contract = "0xfa1a856cfa3409cfa145fa4e20eb270df3eb21ab"
+	return &nuls{
+		name:   "Internet of Services",
+		symbol: "IOST",
+		key:    key,
+	}
+}
 
-	return &iost{eth: token}
+func (c *iost) GetType() uint32 {
+	return c.key.opt.CoinType
+}
+
+func (c *iost) GetName() string {
+	return c.name
+}
+
+func (c *iost) GetSymbol() string {
+	return c.symbol
+}
+
+func (c *iost) GetKey() *Key {
+	return c.key
+}
+
+func (c *iost) GetAddress() string  {
+	return account.EncodePubkey(c.key.Public.SerializeCompressed())
 }
