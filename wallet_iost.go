@@ -13,7 +13,7 @@ type iost struct {
 }
 
 func newIOST(key *Key) Wallet {
-	return &nuls{
+	return &iost{
 		name:   "Internet of Services",
 		symbol: "IOST",
 		key:    key,
