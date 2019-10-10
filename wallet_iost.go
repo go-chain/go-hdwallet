@@ -36,6 +36,6 @@ func (c *iost) GetKey() *Key {
 	return c.key
 }
 
-func (c *iost) GetAddress() string  {
-	return account.EncodePubkey(c.key.Public.SerializeCompressed())
+func (c *iost) GetAddress() (string,error)  {
+	return account.EncodePubkey(c.key.Public.SerializeCompressed()),nil
 }
